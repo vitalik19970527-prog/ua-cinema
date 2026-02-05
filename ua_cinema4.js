@@ -1,6 +1,7 @@
 (function () {
 'use strict';
- if (window.Lampa) {
+
+if (window.Lampa) {
     Lampa.Manifest = {
         type: 'other',
         version: '1.0.0',
@@ -10,6 +11,7 @@
     };
 }
 Lampa.Plugin = true;
+
 /* ======================================================
  * GLOBAL HELPERS / STORAGE
  * ====================================================== */
@@ -181,9 +183,9 @@ function UAOnline(o){
 }
 
 UAOnline.prototype.create=function(){
- Lampa.Activity.loader(true);
+ Lampa.Loading.show();
  this.provider.search(this.card,d=>{
-  Lampa.Activity.loader(false);
+  Lampa.Loading.hide();
   if(!d)return this.empty();
   this.item=d;
   this.renderSeasons();
