@@ -1,5 +1,14 @@
 (function () {
 'use strict';
+ if (window.Lampa) {
+    Lampa.Manifest = {
+        type: 'other',
+        version: '1.0.0',
+        name: 'UA Cinema',
+        description: 'UA Online + UA Torrent Online',
+        component: 'ua_online'
+    };
+}
 
 /* ======================================================
  * GLOBAL HELPERS / STORAGE
